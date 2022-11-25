@@ -17,7 +17,7 @@ load_dotenv()
 import dropbox
 
 # OAuth2 access token.  TODO: login etc.
-TOKEN = "RnepEa_txvwAAAAAAAAAAf9ZhPMM8dCBpSGUELlP9TwupKVatIUF8NtCsxassxtW"
+TOKEN = os.getenv("TOKEN")
 
 parser = argparse.ArgumentParser(description='Sync ~/Downloads to Dropbox')
 parser.add_argument('folder', nargs='?', default='Downloads',
