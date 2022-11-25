@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test: Enter Code{% endblock %}</title>
+</head>
+
+{% block content%}
+  <style type="text/css">
+  .card{background-color: snow;max-width:700px;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 90%; margin: 0 auto; float:  none;margin-bottom: 10em;}
+</style>
+
+
+<center><br><br><br><br><br><br><br><br>
+<div class="card">
+  <br><br><br><h1>{%block subtitle%}HearingSIN-Test: Enter Verification Code{%endblock%}</h1><br><br>
+
+<p style="font-size: 18px;">Please enter the code below</p>
+<br><br>
+<div id='thing'>
+  <form method='post' action='/verify'>
+    <label style="font-size: 1.5em;" for='v-code'>Verification Code:    </label>
+    <input style="font-size: 1.5em;" id="v-code" type="text" name="v-code" required><br><br>
+    <input style="font-size: 1.5em;"type="submit" name="submit" value="Submit">
+  </form><br><br><br>
+</div>
+</div>
+<br><br><br>
+</center>
+
+{% endblock %}

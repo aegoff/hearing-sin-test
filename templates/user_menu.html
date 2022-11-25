@@ -1,0 +1,36 @@
+<head>
+{% extends "base.html" %}
+
+
+{% block title %}HearingSIN-Test: User Menu{% endblock %}
+</head>
+{% block content %}
+<center>
+<style type="text/css">
+  .card{background-color: snow;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 80%; margin: 0 auto; float:  none;margin-bottom: 10em;}
+</style>
+
+
+<b><h1 style="width:90%; font-size: 3.5em;padding-top: 3.5em;text-align: center;"><u>HearingSIN-Test: User Menu</u></h1><b><br><br>
+<div class="card">
+<br><br><br><br>
+<button onclick="location.href='/aboutus'" class="btn btn-lg btn-primary btn-block" style="width: 300px;">About Us</button>
+<br><br>
+<button onclick="location.href='/instructions'" class="btn btn-lg btn-primary btn-block"style="width: 300px;">Instructions</button>
+<br><br>
+{%if current_user.completed=="yes"%}
+<button onclick="location.href='/proof_of_completion'" class="btn btn-lg btn-primary btn-block" style="width: 300px;">Proof of Completion</button><br><br>
+<button onclick="location.href='/instructions2'" class="btn btn-lg btn-primary btn-block" style="width: 300px;" disabled>Begin HearingSIN-Test</button>
+{%else%}
+<button onclick="location.href='/proof_of_completion'"class="btn btn-lg btn-primary btn-block"  style="width: 300px;"disabled>Proof of Completion</button>
+<br><br>
+<button onclick="location.href='/instructions2'" class="btn btn-lg btn-primary btn-block" style="width: 300px;">Begin HearingSIN-Test</button>
+{%endif%}
+<br><br>
+<button onclick="location.href='/logout'" class="btn btn-lg btn-primary btn-block"style="width: 300px;">Logout</button>
+
+<br><br><br><br>
+</div>
+
+</center>
+{% endblock %}

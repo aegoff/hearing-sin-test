@@ -1,0 +1,25 @@
+<head>
+{% extends "base.html" %}
+{% block content %}
+{% block title %}HearingSIN-Test: Proof of Completion{% endblock %}
+</head>
+<center>
+<div style="max-width:700px;align-content:center;padding-top:15em;width:95%;">
+
+<b><h1 style="font-size: 3em;"><u>HearingSIN-Test: Proof of Completion</u></h1><b>
+<br><br>
+<h3>Date: {{current_user.completed_on}}</h4>
+<br>
+<h3>Email Address: {{current_user.email}}</h4>
+<br>
+<div style="width:8em;height: 8em;background-color: black;align-content: center;">
+<img style="margin-top:.75em;"src="static/logo.png">
+</div>
+<br>
+<h3>HearingSIN-Test asserts that this participant has completed the study.</h4><br><br>
+<button class="btn btn-lg btn-primary btn-block"onclick="location.href='/user_menu'"class="btn btn-default" style="width: 15em;">Return to Menu</button>
+<br><br>
+</div>
+
+</center>
+{% endblock %}r>

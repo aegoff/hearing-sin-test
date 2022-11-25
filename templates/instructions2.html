@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test: Instructions{% endblock %}</title>
+</head>
+
+{% block content%}
+   <style type="text/css">
+  .card{background-color: snow;max-width:700px;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 90%; margin: 0 auto; float:  none;margin-bottom: 10em;}
+</style>
+
+
+<center>
+
+<h1 style="padding-top:3em;font-size:3.5em;">{%block subtitle%}HearingSIN-Test: Instructions{%endblock%}</h1><br><br>
+
+<div class="card">
+<div style="padding-right: 1em;padding-left: 1em;">
+	<br><br>
+<h2>Instructions</h2><br><br>
+<p style="font-size: 18px;">When HearingSIN-Test begins, you are going to hear a woman who is saying some sentences. Your job is to repeat back the sentences she is saing to the best of your ability. It will get harder as you go, as the background noise will increase. Repeat the sentences as accurately as you can, and avoid rephrasing. You can guess the words if you are unsure. If you are really unsure, say "I don't know." </p>
+<br><br>
+<iframe id="video" max-width="420" width='100%' height="355" src="https://www.youtube.com/embed/gpwCDlvrhVM?cc_load_policy=1" title="HearingSIN-Test Instructions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br><br>
+<h2>Tips</h2>
+<div style="text-align: left;">
+<p style="font-size: 18px;">1. Please use the "next" buttons to navigate this web page and NOT the Forward and Back buttons at the top of your web browser.<br>2. After the Calibration page, you are NOT allowed to change your volume.<br> 3. You will proceed with this test using either <b>over-the-ear headphones or insert earbuds</b>.<br>4. By proceeding forward with your use of this app, you are acknowledging that you have seen, read, and agree with the terms listed in the Consent Form.
+<br><br></p></div>
+</p></div>
+<br><br>
+<button class="btn btn-lg btn-primary btn-block" onclick="location.href='/calibration'"style="width: 70%;">Begin Calibration</button>
+<br><br><br><br>
+</div>
+</center>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test: Verify Admin{% endblock %}</title>
+</head>
+
+{% block content%}
+  <style type="text/css">
+  .card{background-color: snow;max-width:700px;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 90%; margin: 0 auto; float:  none;margin-bottom: 10em;}
+</style>
+
+
+<center><br><br><br><br><br><br><br><br>
+<div class="card">
+<br><br><br><h1>{%block subtitle%}HearingSIN-Test: Verify Admin{%endblock%}</h1><br><br>
+
+<p style="font-size: 18px;">You are here because you might be an admin for this app.<br> This is a two-factor system to verify your identity.<br>Please enter the admin password.</>
+<br><br>
+<form action='verify_admin' method="post">
+    <input type="password" name="pw" id="pw"/><br><br>
+<button type="submit" class="btn btn-default" style="width: 15em;background-color: #337ab7;color:white;font-size: 2em;">Submit</button>
+</form>
+<br><br><br><br>
+</div>
+</center>
+
+{% endblock %}

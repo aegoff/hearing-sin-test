@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test: Calibration{% endblock %}</title>
+</head>
+
+{% block content%}
+<script src="https://kit.fontawesome.com/6cbc24a763.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="{{ url_for('static', filename='calibration.css') }}">
+  <script src="{{ url_for('static', filename='calibration.js') }}"></script>
+ <style type="text/css">
+  .card{background-color: snow;max-width:700px;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 80%; padding-left: 1em; padding-right:1em;padding-top:5em;margin: 0 auto; float:  none;margin-bottom: 10em;}
+</style>
+<center>
+
+<div class="card"><br><br><br>
+<h1>{%block subtitle%}<u>HearingSIN-Test: Calibration</u>{%endblock%}</h1><br><br>
+<h2>2. Speaker Check</h2>
+<audio id="audio">
+    <source src="{{ url_for('static', filename='audio/signal.wav') }}" type="audio/wav"></source>
+    </audio>
+<p style="font-size: 18px;">You will hear the following audio file play tones on only one side at a time.<br>Please select the correct order in which the tones are played.<br>If you do not hear tones on only one side at a time, you may have an issue with your speakers <br> and should not complete this study until this issue is resolved.</p>
+<br><br>
+<button style="font-size:1.25em;" name="play" onclick="document.getElementById('audio').play();"><i class="fas fa-play"></i>&nbsp;&nbsp;&nbsp;Push to hear audio</button><br><br>
+
+<i style="font-size:1.25em;color: green;">{{message2}}</i><br><br>
+<form action="{{ url_for('calibration2') }}" method="post">
+	<label style="font-size:1.5em;">From what side did each of the tones come from?</label><br><br>
+	<input type="radio" id="lrlr" name="options" value="Left, Right, Left, Right" required>
+  	<label style="font-size:1.25em;"for="lrlr">Left, Right, Left, Right</label><br>
+  	<input type="radio" id="lrrl" name="options" value="Left, Right, Right, Left">
+  	<label style="font-size:1.25em;"for="lrrl">Left, Right, Right, Left</label><br>
+  	<input type="radio" id="rllr" name="options" value="Right, Left, Left, Right">
+  	<label style="font-size:1.25em;"for="rllr">Right, Left, Left, Right</label><br>
+  	<input type="radio" id="rlrl" name="options" value="Right, Left, Right, Left">
+  	<label style="font-size:1.25em;"for="rlrl">Right, Left, Right, Left</label><br><br><br>
+  	<button style="font-size:1.25em;"type="submit"><b>Submit</b></button>
+</form>
+<br><br>
+      {% if message2=="Done! Your speakers are working correctly."%}
+     	<button id="button" style="display:none;" onclick="location.href='/calibration3'" ><b>Next</b></button>
+     	<script>document.getElementById('button').click()</script>
+      {% else %}
+        <button style="display: none"></button>
+      {% endif %}
+<br><br>
+</div></div></center>
+{% endblock%}

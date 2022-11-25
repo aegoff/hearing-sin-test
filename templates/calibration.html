@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test: Calibration{% endblock %}</title>
+</head>
+
+{% block content%}
+ <script src="https://kit.fontawesome.com/6cbc24a763.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="{{ url_for('static', filename='calibration.css') }}">
+  <script src="{{ url_for('static', filename='calibration.js') }}"></script>
+ <style type="text/css">
+  .card{background-color:snow;max-width:700px;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 80%; margin: 0 auto; float:  none;margin-bottom: 10em;}
+</style>
+
+<center>
+<div style="padding-top:15em;">
+<div id="no1" class="card"><br><br><br><br>
+<h1>{%block subtitle%}<u>HearingSIN-Test: Calibration</u>{%endblock%}</h1><br><br><br>
+
+<h2 style="width:80%">1. Most Comfortable Loudness Adjustment</h2>
+<p style="width:80%;font-size: 18px;">Please adjust the sound level on your device so that <br>you can comfortably hear the audio clip below.</p>
+<br><br>
+<button style="font-size: 1.5em;width:60%" onclick="document.getElementById('audio').play();"><i class="fas fa-play"></i>&nbsp;&nbsp;&nbsp;Push to hear audio</button>
+<br><br>
+<audio id="audio">
+    <source src="{{ url_for('static', filename='audio/calibration_token.wav') }}" type="audio/wav"></source>
+</audio>
+<button id="next" style="font-size: 1.5em;" onclick="location.href='/calibration2'">Next</button>
+<br><br><br><br>
+</div>
+</div>
+<br>
+
+</center>
+
+{% endblock %}

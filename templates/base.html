@@ -1,0 +1,84 @@
+
+{%extends "bootstrap/base.html" %}
+<!DOCTYPE html>
+<html style="overflow-x: hidden;" lang="en">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0, maximum-scale=1;" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+     <meta charset="utf-8">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <!--<meta charset="utf-8">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->-->
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/codiqa-cdn/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <script src="https://s3.amazonaws.com/codiqa-cdn/jquery-1.7.2.min.js">
+        </script>
+        <script src="https://s3.amazonaws.com/codiqa-cdn/mobile/1.2.0/jquery.mobile-1.2.0.min.js">
+        </script>
+        <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+   <!--<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">-->
+   <style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+
+{% block navbar %}
+<style type="text/css">
+
+    .nav-tabs .active:hover {background-color: linen;}
+    </style>
+
+<body style="width:100%;background-color:linen;overflow-x: hidden; position: relative;">
+<div id="sideNav" class="navbar navbar-fixed-top nav-justified navbar-expand-lg navbar-dark bg-primary fixed-top" style="width:100%;background-color: black;">
+  <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> -->
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+  <ul class="list-inline navbar-nav navbar-left" style="">
+    <li style="color:white; padding-left: 1em;margin-top: 1em;">
+       <a style="color: white;"class="nav-link active" aria-current="page" href="/user_menu"><img src="static/logo.png"></a>
+    </li>
+    <li style="color:white;font-size: 3em; margin-top: .75em;padding-left: 0.5em;">
+       <a style="color: white;"class="nav-link active" aria-current="page" href="/user_menu">HearingSIN-Test</a>
+    </li></ul>
+  <ul class="nav nav-tabs list-inline navbar-nav navbar-right" style="margin-top: 1em;padding-right: 1em;padding-top: 1em;font-size: 2em;text-align: right;">
+    <li class="nav-item" style="display:inline-block;">
+    <a class="nav-link active js-scroll-trigger" aria-current="page" href="/aboutus" style="color:white;padding:.75em 1em .75em 1em;" onMouseOver="this.style.color='black'"onMouseOut="this.style.color='white'">About Us</a></li>
+    <li class="nav-item" style="display:inline-block;">
+    <a class="nav-link active js-scroll-trigger" aria-current="page" href="/login" style="color:white;padding:.75em 1em .75em 1em;" onMouseOver="this.style.color='black'" onMouseOut="this.style.color='white'">Login/Logout</a></li>
+  </ul><br><br>
+</div></div>
+{% endblock %}   <br><br>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+  {% block content %}
+  {% endblock content%}
+</div>
+
+
+</body>

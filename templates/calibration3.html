@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test: Calibration{% endblock %}</title>
+</head>
+
+<!-- SOURCE https://tech.pathgriho.com/2021/04/microphone-tester-using-html-css-javascript.html -->
+
+{% block content%}
+<script src="https://kit.fontawesome.com/6cbc24a763.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="{{ url_for('static', filename='calibration.css') }}">
+<script src="{{ url_for('static', filename='calibration.js') }}"></script>
+ <style type="text/css">
+  .card{background-color: snow;max-width:900px;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 80%; padding-left:1em;padding-right:1em;margin: 0 auto; float:  none;margin-bottom: 10em;}
+  #next {display: none;}
+</style>
+<center><br><br><br><br><br><br><br><br>
+<div class="card"><br><br><br>
+<h1>{%block subtitle%}<u>HearingSIN-Test: Calibration</u>{%endblock%}</h1><br><br>
+<h2>3. Microphone Check</h2>
+<p style="font-size: 18px;">Please adjust the sound level on your device so that <br>you can comfortably hear the audio clip below.</p>
+<br><br>
+    <center>
+   <div class="bar" id="volume-visualizer" style="width: 30%;"></div></center>
+    <div class="components">
+        <button class="techkib-online-tool-button" id="start">
+            <i class="fa fa-microphone"></i> Start
+        </button>
+        <button class="techkib-online-tool-button" id="stop"><i class="fa fa-stop"></i> Stop</button>
+        <button class="techkib-online-tool-button" onClick="window.location.reload();">
+            <i class="fa fa-refresh"> </i> Reload
+        </button>
+    </div>
+    <h3 id="tex"></h3>
+<br>
+<button id="next" onclick="location.href='/trial_track'" style="width: 50%; display: none;"><b>Go To Set 1</b></button>
+<br>
+<h2><i>Troubleshooting Tips</i></h2>
+    <ul style="font-size: 15px;">
+        <li>Double check that your microphone has not been muted by your device, browser, or headphones.</li>
+        <li>Double check your headphones have a built in mic or access to your device's mic.</li>
+        <li>Make sure you have not disabled microphone permissions for your browser on your device.</li>
+        <li>Be sure to "refresh" after making any changes.</li>
+    </ul>
+<br><br>
+</div>
+<br><br><br>
+</center>
+<script src="{{ url_for('static', filename='calibration.js') }}"></script>
+
+</div>
+{% endblock%}

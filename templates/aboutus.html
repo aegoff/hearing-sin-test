@@ -1,0 +1,28 @@
+<head>
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test: About Us{% endblock %}</title>
+</head>
+
+{% block content%}
+   <style type="text/css">
+
+  .card{max-width: 700px; background-color: snow;box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 98%; margin: 0 auto; padding-left: 1em; padding-right: 1em; float:  none;margin-bottom: 10em;}
+</style>
+
+<div class="container-lg" style="padding-top:15em;padding-left:1em;padding-right:1em;">
+<h1 style="font-size:3.5em;text-align:center;">{%block subtitle%}<u>HearingSIN-Test Online: About Us</u>{%endblock%}</h1><br><br>
+<div class="card"><br><br><br>
+<p style="font-size:1.5em;text-align:center;">The HearingSIN-Test (or "Hearing Speech in Noise Test") provides an estimate of signal-to-noise (SNR) ratio loss. A list of sentences are presented in babble noise. The sentences are presented at SNR ratios which decrease in 5-dB steps from 25 (very easy) to 0 (very difficult). These SNR ratios range from normal to severely impaired performance in noise.<br><br>
+
+Ohio University's Department of Communication Sciences and Disorders has made this test available online for research purposes only (non-commercial use).
+ </p>
+<br><br>
+<center>
+<button class="btn btn-lg btn-primary btn-block"  onclick="location.href='/user_menu'" style="width: 80%;text-align:center;align-self:center;">Return</button>
+
+</center>
+<br><br>
+</div></div></div>
+</center>
+
+{% endblock %}

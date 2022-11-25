@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<title>{% block title%}HearingSIN-Test:Admin Download{% endblock %}</title>
+</head>
+
+{% block content%}
+  <style type="text/css">
+  .card{box-shadow: 0 4em 8em 0 rgba(0,0,0,0.2);width: 80%; max-width:700px;margin: 0 auto; float:  none;margin-bottom: 10em;}
+</style>
+
+
+<center><br><br><br><br><br><br><br><br>
+<div class="card">
+<br><br><br><h1>{%block subtitle%}HearingSIN-Test: Admin Download Page{%endblock%}</h1><br><br>
+
+<p style="font-size: 18px;">You are here because you are one of the admins for this app.<br> Click the button below to access info about this study's participants.</p>
+<br><br>
+
+<button onclick="location.href='/download_csv'"class="btn btn-default" style="width: 15em;background-color: green;color:white;font-size: 2em;">Download</button>
+<br><br><br><br>
+</div>
+</center>
+
+{% endblock %}
