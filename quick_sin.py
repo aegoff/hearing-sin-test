@@ -53,6 +53,7 @@ dbuser=os.getenv('DBUSER')
 dbpass=os.getenv('DBPASS')
 dbhost=os.getenv('DBHOST')
 dbname=os.getenv('DBNAME')
+sentry_pw=os.getenv('SENTRY')
 
 # Connect to the database
 conn = f"mysql+pymysql://{dbuser}:{dbpass}@{dbhost}/{dbname}"
@@ -63,7 +64,7 @@ app.secret_key=os.urandom(12)
 #s = URLSafeTimedSerializer(app.secret_key)
 bootstrap = Bootstrap(app)
 sentry_sdk.init(
-	"https://b397692038304615aabb2017cce2bfd5@o995456.ingest.sentry.io/5954349",
+	sentry_pw,
 
 	# Set traces_sample_rate to 1.0 to capture 100%
 	# of transactions for performance monitoring.
