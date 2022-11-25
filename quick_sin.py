@@ -244,11 +244,11 @@ def trial_track():
         return redirect(url_for('user_menu'))
     if request.method == "POST":
         f = request.files['audio_data']
-        with open(f'/home/HearingSINTest/mysite/Downloads/{pid}_trial.wav', 'wb') as audio:
+        with open(f'/Downloads/{pid}_trial.wav', 'wb') as audio:
             f.save(audio)
         dropbox_upload.main()
-        if os.path.exists(f"/home/HearingSINTest/mysite/Downloads/{pid}_trial.wav"):
-            os.remove(f"/home/HearingSINTest/mysite/Downloads/{pid}_trial.wav")
+        if os.path.exists(f"/Downloads/{pid}_trial.wav"):
+            os.remove(f"/Downloads/{pid}_trial.wav")
         print('successfully uploaded, deleted, now redirecting')
         return redirect(url_for('first_track'))
     return render_template('trial_track.html')
@@ -261,11 +261,11 @@ def trial_set():
 		return redirect(url_for('user_menu'))
 	if request.method == "POST":
 		f = request.files['audio_data']
-		with open(f'/home/HearingSINTest/mysite/Downloads/{pid}_trial.wav', 'wb') as audio:
+		with open(f'/Downloads/{pid}_trial.wav', 'wb') as audio:
 			f.save(audio)
 		dropbox_upload.main()
-		if os.path.exists(f"/home/HearingSINTest/mysite/Downloads/{pid}_trial.wav"):
-			os.remove(f"/home/HearingSINTest/mysite/Downloads/{pid}_trial.wav")
+		if os.path.exists(f"/Downloads/{pid}_trial.wav"):
+			os.remove(f"/Downloads/{pid}_trial.wav")
 		print('successfully uploaded, deleted, now redirecting')
 		return redirect(url_for('first_track'))
 	return render_template('trial_track.html')
